@@ -13,7 +13,7 @@ import play.api.test.Helpers._
 @RunWith(classOf[JUnitRunner])
 class ApplicationSpec extends Specification {
 
-  "Application" should {
+  /*"Application" should {
 
     "send 404 on a bad request" in new WithApplication{
       route(FakeRequest(GET, "/boum")) must beNone
@@ -26,5 +26,21 @@ class ApplicationSpec extends Specification {
       contentType(home) must beSome.which(_ == "text/html")
       contentAsString(home) must contain ("Your new application is ready.")
     }
+  } */
+
+  "A scala forms" should {
+
+    "generate from map" in {
+
+      val reportForm = controllers.Application.reportForm
+
+      //#reportForm-generate-map
+      val anyData = Map("name" -> "Laudo de vistoria")
+      val reportData = reportForm.bind(anyData).get
+      //#reportForm-generate-map
+      reportData.name === "Laudo de vistoria"
+    }
   }
+
+
 }

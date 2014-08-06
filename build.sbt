@@ -10,5 +10,6 @@ libraryDependencies ++= Seq(
   jdbc,
   anorm,
   cache,
-  ws
+  ws ,
+  "org.xhtmlrenderer" % "flying-saucer-pdf" % "9.0.6"
 )

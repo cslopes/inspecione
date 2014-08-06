@@ -1,0 +1,8 @@
+@(reportForm:Form[ReportData])
+
+@import helper._
+
+@helper.form(action = routes.Application.reportPost){
+     @inputText(reportForm("name"))
+     <input type="submit" value="submit" />
+}
